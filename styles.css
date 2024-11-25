@@ -1,63 +1,74 @@
-/* Base Styling */
+/* Base Styling Updates */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Modern and clean font */
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background: linear-gradient(to bottom, #e0eafc, #cfdef3); /* Subtle gradient background */
     color: #333;
     direction: rtl;
 }
 
+/* Header */
 header {
-    background-color: #003366;
+    background: linear-gradient(90deg, #003366, #00509e); /* Vibrant gradient */
     color: white;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1.5s ease-in-out;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin: 0;
+    letter-spacing: 1px;
+    animation: slideInFromLeft 2s ease-in-out;
 }
 
 header p {
-    font-size: 1.2em;
-    margin: 0;
+    font-size: 1.4em;
+    margin: 10px 0 0;
+    animation: slideInFromRight 2s ease-in-out;
 }
 
-/* Main Sections */
+/* Main Section Updates */
 main {
-    padding: 20px;
+    padding: 30px;
 }
 
 section {
     margin-bottom: 30px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    animation: slideIn 1.5s ease-in-out;
-    transition: transform 0.3s ease-in-out;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 section:hover {
-    transform: scale(1.02);
+    background: #f0f8ff; /* Light blue hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
 }
 
 section h2 {
     color: #003366;
-    font-size: 1.8em;
+    font-size: 2em;
     margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: popIn 1.5s ease-in-out;
 }
 
 section p {
-    line-height: 1.6;
-    font-size: 1.1em;
-    color: #333333;
+    line-height: 1.8;
+    font-size: 1.2em;
+    color: #333;
+    text-align: justify;
+    animation: slideInFromBottom 2s ease-in-out;
 }
 
+/* Images */
 section img {
     width: 100%;
     height: auto;
@@ -65,18 +76,19 @@ section img {
     display: block;
     margin: 20px auto;
     border-radius: 8px;
-    opacity: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 2s ease-in-out forwards;
 }
 
 /* Footer */
 footer {
-    background-color: #003366;
+    background: #00509e;
     color: white;
     text-align: center;
-    padding: 15px;
-    font-size: 1em;
+    padding: 20px;
+    font-size: 1.2em;
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* Animations */
@@ -89,9 +101,31 @@ footer {
     }
 }
 
-@keyframes slideIn {
+@keyframes slideInFromLeft {
     0% {
-        transform: translateY(20px);
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(50px);
         opacity: 0;
     }
     100% {
@@ -100,19 +134,13 @@ footer {
     }
 }
 
-/* Buttons and Links */
-button, a {
-    background-color: #003366;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover, a:hover {
-    background-color: #00509e;
+@keyframes popIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
