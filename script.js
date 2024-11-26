@@ -16,12 +16,12 @@ const questions = [
         correct: 0
     },
     {
-        question: "איזה אזור שוחרר במבצע הר חרמון?",
+        question: "איזו אזור שוחרר במבצע הר חרמון?",
         options: ["הר חרמון", "תל פאחר", "רמת הגולן"],
         correct: 0
     },
     {
-        question: "איזה מדינה תקפה את רמת הגולן?",
+        question: "איזו מדינה תקפה את רמת הגולן?",
         options: ["סוריה", "מצרים", "לבנון"],
         correct: 0
     },
@@ -113,9 +113,6 @@ function endQuiz() {
     optionsContainer.innerHTML = ""; // Clear the options
     nextButton.style.display = "none"; // Hide the "Next Question" button
 }
-
-// Event listener for the "Next Question" button
-nextButton.addEventListener("click", nextQuestion);
 
 // Show the first question when the page loads
 document.addEventListener("DOMContentLoaded", showQuestion);
