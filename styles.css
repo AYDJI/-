@@ -1,146 +1,103 @@
-/* Base Styling Updates */
+/* General Styling */
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Modern and clean font */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #e0eafc, #cfdef3); /* Subtle gradient background */
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
     color: #333;
     direction: rtl;
+    animation: fadeIn 2s ease;
 }
 
-/* Header */
 header {
-    background: linear-gradient(90deg, #003366, #00509e); /* Vibrant gradient */
+    background-color: #004d80;
     color: white;
-    padding: 40px 20px;
+    padding: 30px 20px;
     text-align: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1.5s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     font-size: 3em;
     margin: 0;
-    letter-spacing: 1px;
-    animation: slideInFromLeft 2s ease-in-out;
 }
 
 header p {
-    font-size: 1.4em;
-    margin: 10px 0 0;
-    animation: slideInFromRight 2s ease-in-out;
-}
-
-/* Main Section Updates */
-main {
-    padding: 30px;
+    font-size: 1.2em;
 }
 
 section {
-    margin-bottom: 30px;
-    padding: 25px;
+    margin: 20px;
+    padding: 20px;
     background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-section:hover {
-    background: #f0f8ff; /* Light blue hover */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out;
 }
 
 section h2 {
-    color: #003366;
+    color: #004d80;
     font-size: 2em;
-    margin-top: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    animation: popIn 1.5s ease-in-out;
 }
 
-section p {
-    line-height: 1.8;
-    font-size: 1.2em;
-    color: #333;
-    text-align: justify;
-    animation: slideInFromBottom 2s ease-in-out;
-}
-
-/* Images */
 section img {
     width: 100%;
     height: auto;
-    max-width: 600px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out forwards;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-/* Footer */
-footer {
-    background: #00509e;
+/* Quiz Form */
+#quiz-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#quiz-form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+#quiz-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    background-color: #004d80;
     color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2em;
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 2s ease-in-out;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #006bb3;
 }
 
 /* Animations */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
     }
-    100% {
+    to {
         opacity: 1;
     }
 }
 
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100px);
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
         opacity: 0;
     }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromRight {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromBottom {
-    0% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
+    to {
         transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes popIn {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
         opacity: 1;
     }
 }
