@@ -60,38 +60,95 @@
             <img src="4.jpg" alt="המורשת והזיכרון">
         </section>
 
-        <section id="quiz">
-            <h2>חידון מלחמת יום הכיפורים</h2>
-            <p>בדקו את הידע שלכם על אחד האירועים המשמעותיים ביותר בתולדות ישראל:</p>
-            <form id="quiz-form">
-                <div>
-                    <label for="q1">מתי פרצה מלחמת יום הכיפורים?</label>
-                    <select id="q1" name="q1">
-                        <option value="1971">1971</option>
-                        <option value="1973">1973</option>
-                        <option value="1975">1975</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="q2">איזו תעלה צלחו המצרים בחזית הדרום?</label>
-                    <select id="q2" name="q2">
-                        <option value="תעלת סואץ">תעלת סואץ</option>
-                        <option value="תעלת פנמה">תעלת פנמה</option>
-                        <option value="תעלת למאנש">תעלת למאנש</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="q3">מה היה אחד ההישגים המרכזיים של צה"ל בצפון?</label>
-                    <select id="q3" name="q3">
-                        <option value="כיבוש רמת הגולן">כיבוש רמת הגולן</option>
-                        <option value="הדיפת הסורים">הדיפת הסורים</option>
-                        <option value="הסכם שלום">הסכם שלום</option>
-                    </select>
-                </div>
-                <button type="button" onclick="checkAnswers()">בדוק תשובות</button>
-            </form>
-            <p id="quiz-result"></p>
-        </section>
+<section id="quiz">
+    <h2>חידון מלחמת יום הכיפורים</h2>
+    <p>בדקו את הידע שלכם על אחד האירועים המשמעותיים ביותר בתולדות ישראל:</p>
+    <form id="quiz-form">
+        <div>
+            <label for="q1">מתי פרצה מלחמת יום הכיפורים?</label>
+            <select id="q1" name="q1">
+                <option value="1971">1971</option>
+                <option value="1973">1973</option>
+                <option value="1975">1975</option>
+            </select>
+        </div>
+        <div>
+            <label for="q2">איזו תעלה צלחו המצרים בחזית הדרום?</label>
+            <select id="q2" name="q2">
+                <option value="תעלת סואץ">תעלת סואץ</option>
+                <option value="תעלת פנמה">תעלת פנמה</option>
+                <option value="תעלת למאנש">תעלת למאנש</option>
+            </select>
+        </div>
+        <div>
+            <label for="q3">מה היה אחד ההישגים המרכזיים של צה"ל בצפון?</label>
+            <select id="q3" name="q3">
+                <option value="כיבוש רמת הגולן">כיבוש רמת הגולן</option>
+                <option value="הדיפת הסורים">הדיפת הסורים</option>
+                <option value="הסכם שלום">הסכם שלום</option>
+            </select>
+        </div>
+        <div>
+            <label for="q4">באיזה תאריך הסתיימה מלחמת יום הכיפורים?</label>
+            <select id="q4" name="q4">
+                <option value="22 באוקטובר 1973">22 באוקטובר 1973</option>
+                <option value="25 באוקטובר 1973">25 באוקטובר 1973</option>
+                <option value="28 באוקטובר 1973">28 באוקטובר 1973</option>
+            </select>
+        </div>
+        <div>
+            <label for="q5">איך נקרא המבצע המרכזי של צה"ל בדרום?</label>
+            <select id="q5" name="q5">
+                <option value="מבצע אביב נעורים">מבצע אביב נעורים</option>
+                <option value="מבצע באדר">מבצע באדר</option>
+                <option value="מבצע אבירי לב">מבצע אבירי לב</option>
+            </select>
+        </div>
+        <div>
+            <label for="q6">איזה גבול מרכזי היה במוקד הקרבות בצפון?</label>
+            <select id="q6" name="q6">
+                <option value="הגבול עם לבנון">הגבול עם לבנון</option>
+                <option value="הגבול עם סוריה">הגבול עם סוריה</option>
+                <option value="הגבול עם ירדן">הגבול עם ירדן</option>
+            </select>
+        </div>
+        <div>
+            <label for="q7">איזה ראש ממשלה כיהן במהלך המלחמה?</label>
+            <select id="q7" name="q7">
+                <option value="לוי אשכול">לוי אשכול</option>
+                <option value="גולדה מאיר">גולדה מאיר</option>
+                <option value="מנחם בגין">מנחם בגין</option>
+            </select>
+        </div>
+        <div>
+            <label for="q8">איזה הר היה במוקד הקרבות ברמת הגולן?</label>
+            <select id="q8" name="q8">
+                <option value="הר חרמון">הר חרמון</option>
+                <option value="הר תבור">הר תבור</option>
+                <option value="הר הכרמל">הר הכרמל</option>
+            </select>
+        </div>
+        <div>
+            <label for="q9">איזה צבא תקף יחד עם מצרים את ישראל?</label>
+            <select id="q9" name="q9">
+                <option value="לבנון">לבנון</option>
+                <option value="ירדן">ירדן</option>
+                <option value="סוריה">סוריה</option>
+            </select>
+        </div>
+        <div>
+            <label for="q10">כמה ימים נמשכה מלחמת יום הכיפורים?</label>
+            <select id="q10" name="q10">
+                <option value="10">10</option>
+                <option value="19">19</option>
+                <option value="22">22</option>
+            </select>
+        </div>
+        <button type="button" onclick="checkAnswers()">בדוק תשובות</button>
+    </form>
+    <p id="quiz-result"></p>
+</section>
+
     </main>
 
     <footer>
