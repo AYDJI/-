@@ -62,57 +62,47 @@ const optionsContainer = document.getElementById("quiz-options");
 const nextButton = document.getElementById("next-question");
 const resultElement = document.getElementById("quiz-result");
 
-// Function to display a question
+// Function to display the question and options
 function showQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
-
-    // Set the question text
     questionElement.textContent = currentQuestion.question;
+    optionsContainer.innerHTML = ""; // Clear old options
 
-    // Clear old options and display new ones
-    optionsContainer.innerHTML = "";
     currentQuestion.options.forEach((option, index) => {
         const button = document.createElement("button");
         button.textContent = option;
-        button.className = "quiz-option";
         button.onclick = () => checkAnswer(index);
         optionsContainer.appendChild(button);
     });
 
-    // Hide the next button initially
-    nextButton.style.display = "none";
+    nextButton.style.display = "none"; // Hide "Next" button initially
 }
 
-// Function to check the user's answer
+// Function to check if the answer is correct
 function checkAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
-
-    // Check if the selected answer is correct
     if (selectedIndex === currentQuestion.correct) {
         score++;
     }
-
-    // Show the "Next Question" button
-    nextButton.style.display = "inline-block";
+    nextButton.style.display = "inline-block"; // Show "Next" button after an answer is selected
 }
 
-// Function to handle the next question
+// Function to move to the next question
 function nextQuestion() {
     currentQuestionIndex++;
-
     if (currentQuestionIndex < questions.length) {
-        showQuestion(); // Show the next question
+        showQuestion();
     } else {
-        endQuiz(); // End the quiz if no more questions
+        endQuiz();
     }
 }
 
-// Function to end the quiz and display the result
+// Function to display the final score
 function endQuiz() {
     questionElement.textContent = `השגת ${score} מתוך ${questions.length} תשובות נכונות!`;
-    optionsContainer.innerHTML = ""; // Clear the options
-    nextButton.style.display = "none"; // Hide the "Next Question" button
+    optionsContainer.innerHTML = "";
+    nextButton.style.display = "none";
 }
 
-// Show the first question when the page loads
+// Load the first question when the page is ready
 document.addEventListener("DOMContentLoaded", showQuestion);
