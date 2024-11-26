@@ -60,7 +60,7 @@ const quizContainer = document.getElementById("quiz-container");
 const questionElement = document.getElementById("quiz-question");
 const optionsContainer = document.getElementById("quiz-options");
 const nextButton = document.getElementById("next-question");
-const resultElement = document.getElementById("quiz-result");
+const quizResult = document.getElementById("quiz-result");
 
 // Function to display the question and options
 function showQuestion() {
