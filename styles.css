@@ -8,42 +8,61 @@ body {
     direction: rtl;
 }
 
-/* Header */
 header {
     background-color: #003366;
     color: white;
     padding: 30px 20px;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Sections */
-main section {
-    margin: 20px auto;
+header h1 {
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    max-width: 800px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    animation: slideIn 1s ease-in-out;
-    transition: transform 0.3s ease-in-out;
 }
 
-main section:hover {
-    transform: scale(1.02);
-}
-
-/* Quiz */
 #quiz-container {
-    text-align: center;
+    padding: 20px;
 }
 
-button {
+#quiz-options button {
     background-color: #003366;
     color: white;
-    padding: 10px 20px;
     border: none;
+    padding: 10px 20px;
+    margin: 5px;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
+}
+
+#quiz-options button:hover {
+    background-color: #00509e;
+}
+
+#quiz-result {
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1em;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
 }
