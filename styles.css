@@ -1,42 +1,9 @@
-/* Base Styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-    color: #333;
-    direction: rtl;
-}
-
-header {
-    background-color: #003366;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-    font-size: 2.5em;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Quiz Styling */
 #quiz-container {
     padding: 20px;
 }
 
-#quiz-options button {
+.quiz-option {
     background-color: #003366;
     color: white;
     border: none;
@@ -48,7 +15,7 @@ section {
     transition: background-color 0.3s ease;
 }
 
-#quiz-options button:hover {
+.quiz-option:hover {
     background-color: #00509e;
 }
 
@@ -56,13 +23,4 @@ section {
     font-size: 1.2em;
     margin-top: 20px;
     font-weight: bold;
-}
-
-footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 1em;
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
 }
