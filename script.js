@@ -103,7 +103,6 @@ function endQuiz() {
     optionsContainer.innerHTML = "";
     nextButton.style.display = "none";
 }
-a
 
 // Load the first question when the page is ready
 document.addEventListener("DOMContentLoaded", showQuestion);
