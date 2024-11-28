@@ -1,116 +1,83 @@
-// Quiz data: Questions, options, and correct answers
-const questions = [
+// Quiz Data
+const quizData = [
     {
         question: "מתי פרצה מלחמת יום הכיפורים?",
-        options: ["1973", "1967", "1956"],
-        correct: 0
+        options: ["1973", "1967", "1982"],
+        answer: "1973",
     },
     {
-        question: "איזה חזית הייתה בדרום?",
-        options: ["סיני", "רמת הגולן", "תל אביב"],
-        correct: 0
+        question: "איזה מדינות תקפו את ישראל במלחמה?",
+        options: ["מצרים וסוריה", "ירדן ולבנון", "עיראק ואיראן"],
+        answer: "מצרים וסוריה",
     },
     {
-        question: "מה היה שם המנהיגה הישראלית בתקופת המלחמה?",
-        options: ["גולדה מאיר", "דוד בן גוריון", "יצחק רבין"],
-        correct: 0
+        question: "מהו אזור הקרב המרכזי בצפון?",
+        options: ["רמת הגולן", "תעלת סואץ", "ים המלח"],
+        answer: "רמת הגולן",
     },
     {
-        question: "איזו אזור שוחרר במבצע הר חרמון?",
-        options: ["הר חרמון", "תל פאחר", "רמת הגולן"],
-        correct: 0
+        question: "מי היה ראש ממשלת ישראל במהלך המלחמה?",
+        options: ["גולדה מאיר", "דוד בן-גוריון", "יצחק רבין"],
+        answer: "גולדה מאיר",
     },
     {
-        question: "איזו מדינה תקפה את רמת הגולן?",
-        options: ["סוריה", "מצרים", "לבנון"],
-        correct: 0
+        question: "מהו יום סיום המלחמה?",
+        options: ["22 באוקטובר", "25 באוקטובר", "30 באוקטובר"],
+        answer: "25 באוקטובר",
     },
-    {
-        question: "מתי הסתיימה המלחמה?",
-        options: ["25 באוקטובר 1973", "30 ביוני 1973", "1 באפריל 1973"],
-        correct: 0
-    },
-    {
-        question: "כמה ימים נמשכה המלחמה?",
-        options: ["19", "13", "30"],
-        correct: 0
-    },
-    {
-        question: "מה הייתה תעלת המים במרכז הקרבות בדרום?",
-        options: ["תעלת סואץ", "נהר הירדן", "ים סוף"],
-        correct: 0
-    },
-    {
-        question: "מהו המבצע הצה\"לי המרכזי במלחמה?",
-        options: ["מבצע אבירי לב", "מבצע מוקד", "מבצע שלום הגליל"],
-        correct: 0
-    },
-    {
-        question: "איזו מלחמה קדמה למלחמת יום הכיפורים?",
-        options: ["מלחמת ששת הימים", "מלחמת לבנון", "מלחמת העצמאות"],
-        correct: 0
-    }
 ];
 
-let currentQuestionIndex = 0; // Tracks current question
-let score = 0; // Tracks score
+// Quiz Variables
+let currentQuestionIndex = 0;
+let score = 0;
 
 // DOM Elements
-const questionElement = document.getElementById("quiz-question");
-const optionsContainer = document.getElementById("quiz-options");
-const nextButton = document.getElementById("next-question");
-const resultElement = document.getElementById("quiz-result");
+const questionEl = document.getElementById("quiz-question");
+const optionsEl = document.getElementById("quiz-options");
+const nextBtn = document.getElementById("next-question");
+const resultEl = document.getElementById("quiz-result");
 
-// Function to display the current question
-function showQuestion() {
-    // Clear previous options
-    optionsContainer.innerHTML = "";
+// Display Question
+function displayQuestion() {
+    const currentQuestion = quizData[currentQuestionIndex];
+    questionEl.textContent = currentQuestion.question;
 
-    // Get the current question
-    const currentQuestion = questions[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
-
-    // Add options as buttons
-    currentQuestion.options.forEach((option, index) => {
+    optionsEl.innerHTML = "";
+    currentQuestion.options.forEach(option => {
         const button = document.createElement("button");
         button.textContent = option;
-        button.className = "quiz-option";
-        button.onclick = () => checkAnswer(index); // Add click handler
-        optionsContainer.appendChild(button);
+        button.onclick = () => checkAnswer(option);
+        optionsEl.appendChild(button);
     });
-
-    // Hide the next button until an answer is selected
-    nextButton.style.display = "none";
 }
 
-// Function to check the selected answer
-function checkAnswer(selectedIndex) {
-    const currentQuestion = questions[currentQuestionIndex];
-    if (selectedIndex === currentQuestion.correct) {
-        score++; // Increment score if correct
+// Check Answer
+function checkAnswer(selectedOption) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    if (selectedOption === currentQuestion.answer) {
+        score++;
     }
-
-    // Show the next button
-    nextButton.style.display = "inline-block";
+    nextBtn.style.display = "inline-block";
 }
 
-// Function to handle the next question
+// Next Question
 function nextQuestion() {
-    currentQuestionIndex++; // Move to next question
-
-    if (currentQuestionIndex < questions.length) {
-        showQuestion(); // Display next question
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizData.length) {
+        displayQuestion();
+        nextBtn.style.display = "none";
     } else {
-        endQuiz(); // End the quiz if no more questions
+        showResult();
     }
 }
 
-// Function to display the quiz result
-function endQuiz() {
-    questionElement.textContent = `השגת ${score} מתוך ${questions.length} תשובות נכונות!`;
-    optionsContainer.innerHTML = ""; // Clear options
-    nextButton.style.display = "none"; // Hide next button
+// Show Quiz Result
+function showResult() {
+    questionEl.textContent = "סיימת את החידון!";
+    optionsEl.innerHTML = "";
+    resultEl.textContent = `ענית נכון על ${score} מתוך ${quizData.length} שאלות.`;
+    nextBtn.style.display = "none";
 }
 
-// Initialize the quiz on page load
-document.addEventListener("DOMContentLoaded", showQuestion);
+// Initialize Quiz
+displayQuestion();
